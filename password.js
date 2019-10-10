@@ -20,7 +20,7 @@ function generatePasswords() {
 		li = document.createElement("li");
 		newPW = createPassword(Number(min), Number(max), Number(pwLength));
 		if (easy) {
-			while (!isEasy(newPw)) {
+			while (!isEasy(newPW)) {
 				newPW = createPassword(Number(min), Number(max), Number(pwLength));
 			}
 		}
