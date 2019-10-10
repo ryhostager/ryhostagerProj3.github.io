@@ -7,11 +7,14 @@ sevenLetterWords = ["through","picture","country","between","thought","example",
 
 function generatePasswords() {
     document.body.style.backgroundColor = "lightblue";
+	min = document.querySelector("#minWordLength").value;
+	max = document.querySelector("#maxWordLength").value;
+	pwLength = document.querySelector("#maxPWLength").value;
     ul = document.createElement("ul");
 	
 	for(i = 0; i < 20; i++) {
 		li = document.createElement("li");
-		newPW = randomWord(Math.floor(Math.random() * 6) + 2);
+		newPW = randomWord(min);
 		contents = document.createTextNode(newPW);
 		li.appendChild(contents);
 		ul.appendChild(li);
