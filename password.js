@@ -16,7 +16,7 @@ function generatePasswords() {
     ul = document.createElement("ul");
 	ul.setAttribute("id", "passwords");
 	
-	for(i = 0; i < 15; i++) {
+	for(i = 0; i < 12; i++) {
 		li = document.createElement("li");
 		newPW = createPassword(Number(min), Number(max), Number(pwLength));
 		if (easy) {
