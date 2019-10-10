@@ -41,7 +41,7 @@ function createPassword(min, max, maxLength) {
 		} else {
 			rand = Math.floor(Math.random() * (maxLength-min) + min);
 		}
-		word = randomWord(n);
+		word = randomWord(rand);
 		return word + createPassword(min, max, maxLength - rand);
 	}
 }
@@ -63,4 +63,25 @@ function randomWord(n) {
 		item = twoLetterWords[Math.floor(Math.random() * twoLetterWords.length)];
 	}
     return item;
+}
+
+function numberSubstitute(str) {
+	newStr = "";
+	for (i=0; i<str.length; i++) {
+		c = str.charAt(i);
+		if (c=="e") {
+			newStr += "3";
+		} else if (c=="o") {
+			newStr += "0";
+		} else if (c=="l") {
+			newStr += "1";
+		} else if (c=="a") {
+			newStr += "4";
+		} else if (c=="s") {
+			newStr += "5";
+		} else {
+			newStr += c;
+		}
+	}
+	return newStr;
 }
