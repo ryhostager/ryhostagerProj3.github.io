@@ -75,8 +75,8 @@ function randomWord(n) {
 
 function numberSubstitute(str) {
 	newStr = "";
-	for (i=0; i<str.length; i++) {
-		c = str.charAt(i);
+	for (j=0; j<str.length; j++) {
+		c = str.charAt(j);
 		if (c=="e") {
 			newStr += "3";
 		} else if (c=="o") {
@@ -99,11 +99,11 @@ function isEasy(str) {
 	right = ["y","u","i","o","p","h","j","k","l","b","n","m"];
 	
 	countAlternate = 0;
-	for (i=0; i<str.length-1; i++) {
-		if (left.includes(str.charAt(i)) && right.includes(str.charAt(i+1))) {
+	for (k=0; k<str.length-1; k++) {
+		if (left.includes(str.charAt(k)) && right.includes(str.charAt(k+1))) {
 			countAlternate++;
 		}
-		if (right.includes(str.charAt(i)) && left.includes(str.charAt(i+1))) {
+		if (right.includes(str.charAt(k)) && left.includes(str.charAt(k+1))) {
 			countAlternate++;
 		}
 	}
