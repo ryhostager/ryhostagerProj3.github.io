@@ -13,7 +13,7 @@ function generatePasswords() {
 	
 	for(i = 0; i < 20; i++) {
 		li = document.createElement("li");
-		newPW = randomWord(min);
+		newPW = createPassWord(min, max, pwLength);
 		contents = document.createTextNode(newPW);
 		li.appendChild(contents);
 		ul.appendChild(li);
@@ -31,18 +31,33 @@ function generatePasswords() {
     //t.appendChild(trow);
 }
 
+function createPassword(min, max, maxLength) {
+	if (min > maxLength) {
+		return;
+	}
+	else {
+		if (max < maxLength) {
+			rand = Math.floor(Math.random() * (max-min) + min);
+		} else {
+			rand = Math.floor(Math.random() * (maxLength-min) + min);
+		}
+		word = randomWord(n);
+		return word + createPassword(min, max, maxLength - rand);
+	}
+}
+
 function randomWord(n) {
 	if(n===2) {
 		item = twoLetterWords[Math.floor(Math.random() * twoLetterWords.length)];
-	} else if (n===3) {
+	} else if (n==3) {
 		item = threeLetterWords[Math.floor(Math.random() * threeLetterWords.length)];
-	} else if (n===4) {
+	} else if (n==4) {
 		item = fourLetterWords[Math.floor(Math.random() * fourLetterWords.length)];
-	} else if (n===5) {
+	} else if (n==5) {
 		item = fiveLetterWords[Math.floor(Math.random() * fiveLetterWords.length)];
-	} else if (n===6) {
+	} else if (n==6) {
 		item = sixLetterWords[Math.floor(Math.random() * sixLetterWords.length)];
-	} else if (n===7) {
+	} else if (n==7) {
 		item = sevenLetterWords[Math.floor(Math.random() * sevenLetterWords.length)];
 	} else {
 		item = twoLetterWords[Math.floor(Math.random() * twoLetterWords.length)];
