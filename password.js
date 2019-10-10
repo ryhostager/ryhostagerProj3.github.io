@@ -37,7 +37,7 @@ function generatePasswords() {
 
 function createPassword(min, max, maxLength) {
 	if (min > maxLength) {
-		return;
+		return "";
 	}
 	else {
 		if (max < maxLength) {
