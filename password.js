@@ -8,12 +8,12 @@
 
 
 
-function randomWord(int num) {
-	if(num == 2) {
-		String item = twoLettersWords[Math.floor(Math.random()*twoLetterWords.length)];
-		return item;
-	}
-}
+//function randomWord(int num) {
+	//if(num == 2) {
+		//String item = twoLettersWords[Math.floor(Math.random()*twoLetterWords.length)];
+		//return item;
+	//}
+//}
 
 function generatePasswords() {
 	document.body.style.backgroundColor = "lightblue";
