@@ -12,7 +12,7 @@
 		//return item;
 	//}
 //}
-//twoLetterWords = ["of", "to", "in", "is", "it", "he", "on", "as", "be", "at", "or", "by", "we", "up", "an", "do", "if", "so", "go", "no", "my", "me", "us", "oh", "am"];
+twoLetterWords = ["of", "to", "in", "is", "it", "he", "on", "as", "be", "at", "or", "by", "we", "up", "an", "do", "if", "so", "go", "no", "my", "me", "us", "oh", "am"];
 
 function generatePasswords() {
     document.body.style.backgroundColor = "lightblue";
@@ -30,6 +30,6 @@ function generatePasswords() {
 }
 
 function randomWord(int n) {
-    String item = twoLetterWords[Math.floor(Math.random() * twoLetterWords.length)];
+    item = twoLetterWords[Math.floor(Math.random() * twoLetterWords.length)];
     return item;
 }
