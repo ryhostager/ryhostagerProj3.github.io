@@ -6,7 +6,6 @@ sixLetterWords = ["number","people","little","differ","before","follow","change"
 sevenLetterWords = ["through","picture","country","between","thought","example","science","measure","product","numeral","problem","hundred","morning","several","against","pattern","certain","machine","correct","contain","develop","special","produce","nothing","surface","brought","distant","present","general","include","perhaps","subject","brother","believe","written","weather","million","strange","village","whether","century","natural","observe","section","receive","trouble","suggest","collect","control","decimal","captain","protect","history","element","student","imagine","provide","capital","soldier","process","operate","compare","current","success","company","arrange","stretch","require","prepare","discuss","forward","similar","evening","connect","station","segment","instant","support"];
 
 function generatePasswords() {
-    document.body.style.backgroundColor = "lightblue";
 	min = document.querySelector("#minWordLength").value;
 	max = document.querySelector("#maxWordLength").value;
 	pwLength = document.querySelector("#maxPWLength").value;
