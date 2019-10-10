@@ -10,6 +10,7 @@ function generatePasswords() {
 	max = document.querySelector("#maxWordLength").value;
 	pwLength = document.querySelector("#maxPWLength").value;
 	numSubs = document.querySelector("#subNums").checked;
+	easy = document.querySelector("#easyType").checked;
 	list = document.getElementById("passwords");
 	list.parentNode.removeChild(list);
     ul = document.createElement("ul");
@@ -18,6 +19,11 @@ function generatePasswords() {
 	for(i = 0; i < 5; i++) {
 		li = document.createElement("li");
 		newPW = createPassword(Number(min), Number(max), Number(pwLength));
+		if (easy) {
+			while (!isEasy(newPw)) {
+				newPW = createPassword(Number(min), Number(max), Number(pwLength));
+			}
+		}
 		if (numSubs) {
 			newPW = numberSubstitute(newPW);
 		}
@@ -26,17 +32,8 @@ function generatePasswords() {
 		ul.appendChild(li);
 		
 	}
+	
 	document.body.append(ul);
-    //n = randomWord(2);
-    //document.body.innerHtml = n;
-    //t = document.querySelector("#pwTable");
-    //trow = document.createElement("tr");
-    //td = document.createElement("td");
-    //contents = document.createTextNode("HI");
-    //td.appendChild(contents);
-    //td.onclick = clickon;
-    //trow.appendChild(td);
-    //t.appendChild(trow);
 }
 
 function createPassword(min, max, maxLength) {
@@ -107,8 +104,14 @@ function isEasy(str) {
 			countAlternate++;
 		}
 	}
-	if (str.length < 4) {
-		return countAlternate >=2;
+	if (str.length < 9) {
+		return countAlternate >= 5;
+	} else if (str.length < 12) {
+		return countAlternate >= 7;
+	} else if (str.length < 15) {
+		return counterAlternate >= 9;
+	} else {
+		return counterAlternate >= 11
 	}
 }
 
