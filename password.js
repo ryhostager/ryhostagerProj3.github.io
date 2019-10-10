@@ -9,11 +9,15 @@ function generatePasswords() {
 	min = document.querySelector("#minWordLength").value;
 	max = document.querySelector("#maxWordLength").value;
 	pwLength = document.querySelector("#maxPWLength").value;
+	numSubs = document.querySelector("#subNums").checked;
     ul = document.createElement("ul");
 	
 	for(i = 0; i < 20; i++) {
 		li = document.createElement("li");
 		newPW = createPassword(min, max, pwLength);
+		if (numSubs) {
+			newPW = numberSubstitute(newPW);
+		}
 		contents = document.createTextNode(newPW);
 		li.appendChild(contents);
 		ul.appendChild(li);
