@@ -17,7 +17,7 @@ function generatePasswords() {
 	
 	for(i = 0; i < 20; i++) {
 		li = document.createElement("li");
-		newPW = createPassword(min, max, pwLength);
+		newPW = createPassword(Number(min), Number(max), Number(pwLength));
 		if (numSubs) {
 			newPW = numberSubstitute(newPW);
 		}
