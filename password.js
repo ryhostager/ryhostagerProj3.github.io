@@ -42,9 +42,9 @@ function createPassword(min, max, maxLength) {
 	}
 	else {
 		if (max < maxLength) {
-			rand = Math.floor(Math.random() * (max-min) + min);
+			rand = Math.floor((Math.random() * (max-min)) + min);
 		} else {
-			rand = Math.floor(Math.random() * (maxLength-min) + min);
+			rand = Math.floor((Math.random() * (maxLength-min)) + min);
 		}
 		word = randomWord(rand);
 		return word + createPassword(min, max, maxLength - rand);
