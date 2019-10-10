@@ -12,24 +12,23 @@
 		//return item;
 	//}
 //}
-twoLetterWords = ["of", "to", "in", "is", "it", "he", "on", "as", "be", "at", "or", "by", "we", "up", "an", "do", "if", "so", "go", "no", "my", "me", "us", "oh", "am"];
-
+//twoLetterWords = ["of", "to", "in", "is", "it", "he", "on", "as", "be", "at", "or", "by", "we", "up", "an", "do", "if", "so", "go", "no", "my", "me", "us", "oh", "am"];
 function generatePasswords() {
     document.body.style.backgroundColor = "lightblue";
     //tt = document.createElement("table");
     n = randomWord(2);
     document.body.innerHtml = n;
-    t = document.querySelector("#pwTable");
-    trow = document.createElement("tr");
-    td = document.createElement("td");
-    contents = document.createTextNode("HI");
-    td.appendChild(contents);
-    td.onclick = clickon;
-    trow.appendChild(td);
-    t.appendChild(trow);
+    //t = document.querySelector("#pwTable");
+    //trow = document.createElement("tr");
+    //td = document.createElement("td");
+    //contents = document.createTextNode("HI");
+    //td.appendChild(contents);
+    //td.onclick = clickon;
+    //trow.appendChild(td);
+    //t.appendChild(trow);
 }
 
 function randomWord(int n) {
-    item = twoLetterWords[Math.floor(Math.random() * twoLetterWords.length)];
-    return item;
+    //item = twoLetterWords[Math.floor(Math.random() * twoLetterWords.length)];
+    return "the";
 }
