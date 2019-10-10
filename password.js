@@ -129,9 +129,9 @@ function isEasy(str) {
 	} else if (str.length < 12) {
 		return countAlternate >= 7;
 	} else if (str.length < 15) {
-		return counterAlternate >= 9;
+		return countAlternate >= 9;
 	} else {
-		return counterAlternate >= 11
+		return countAlternate >= 11
 	}
 }
 
