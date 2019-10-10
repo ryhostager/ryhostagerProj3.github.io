@@ -13,7 +13,7 @@ function generatePasswords() {
 	
 	for(i = 0; i < 20; i++) {
 		li = document.createElement("li");
-		newPW = createPassWord(min, max, pwLength);
+		newPW = createPassword(min, max, pwLength);
 		contents = document.createTextNode(newPW);
 		li.appendChild(contents);
 		ul.appendChild(li);
