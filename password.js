@@ -36,7 +36,7 @@ function generatePasswords() {
     //t.appendChild(trow);
 }
 
-function randomWord(int n) {
+function randomWord(n) {
     item = twoLetterWords[Math.floor(Math.random() * twoLetterWords.length)];
     return "the";
 }
