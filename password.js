@@ -15,7 +15,7 @@ function generatePasswords() {
     ul = document.createElement("ul");
 	ul.setAttribute("id", "passwords");
 	
-	for(i = 0; i < 20; i++) {
+	for(i = 0; i < 5; i++) {
 		li = document.createElement("li");
 		newPW = createPassword(Number(min), Number(max), Number(pwLength));
 		if (numSubs) {
@@ -98,7 +98,16 @@ function isEasy(str) {
 	right = ["y","u","i","o","p","h","j","k","l","b","n","m"];
 	
 	countAlternate = 0;
-	for (i=0; i<str.length; i++) {
-		
+	for (i=0; i<str.length-1; i++) {
+		if (left.includes(str.charAt(i)) && right.includes(str.charAt(i+1))) {
+			countAlternate++;
+		}
+		if (right.includes(str.charAt(i)) && left.includes(str.charAt(i+1))) {
+			countAlternate++;
+		}
+	}
+	if (str.length < 4) {
+		return countAlternate >=2;
 	}
 }
+
