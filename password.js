@@ -6,27 +6,38 @@ sixLetterWords = ["number","people","little","differ","before","follow","change"
 sevenLetterWords = ["through","picture","country","between","thought","example","science","measure","product","numeral","problem","hundred","morning","several","against","pattern","certain","machine","correct","contain","develop","special","produce","nothing","surface","brought","distant","present","general","include","perhaps","subject","brother","believe","written","weather","million","strange","village","whether","century","natural","observe","section","receive","trouble","suggest","collect","control","decimal","captain","protect","history","element","student","imagine","provide","capital","soldier","process","operate","compare","current","success","company","arrange","stretch","require","prepare","discuss","forward","similar","evening","connect","station","segment","instant","support"];
 
 function generatePasswords() {
+	
+	//Grab the relevant input values to create passwords
 	min = document.querySelector("#minWordLength").value;
 	max = document.querySelector("#maxWordLength").value;
 	pwLength = document.querySelector("#maxPWLength").value;
 	numSubs = document.querySelector("#subNums").checked;
 	easy = document.querySelector("#easyType").checked;
+	
+	//Set up the list to display the passwords
 	list = document.getElementById("passwords");
 	list.parentNode.removeChild(list);
     ul = document.createElement("ul");
 	ul.setAttribute("id", "passwords");
 	
+	//Generate a list of passwords
 	for(i = 0; i < 12; i++) {
 		li = document.createElement("li");
+		//Create a random password based on the user's inputs
 		newPW = createPassword(Number(min), Number(max), Number(pwLength));
+		
+		//Change the password if it is not "easily typeable" if indicated
 		if (easy) {
 			while (!isEasy(newPW)) {
 				newPW = createPassword(Number(min), Number(max), Number(pwLength));
 			}
 		}
+		
+		//Substitute numbers if indicated
 		if (numSubs) {
 			newPW = numberSubstitute(newPW);
 		}
+
 		contents = document.createTextNode(newPW);
 		li.appendChild(contents);
 		ul.appendChild(li);
@@ -36,6 +47,7 @@ function generatePasswords() {
 	document.body.append(ul);
 }
 
+//Based on the min word length, max word length, and max total length, puts together words recursively
 function createPassword(min, max, maxLength) {
 	if (min > maxLength) {
 		return "";
@@ -51,6 +63,7 @@ function createPassword(min, max, maxLength) {
 	}
 }
 
+//Randomly chooses a word from one of the lists of words based on the length desired
 function randomWord(n) {
 	if(n===2) {
 		item = twoLetterWords[Math.floor(Math.random() * twoLetterWords.length)];
@@ -70,6 +83,7 @@ function randomWord(n) {
     return item;
 }
 
+//Substitutes certain letters for numbers, used when the user wants a more complicated password
 function numberSubstitute(str) {
 	newStr = "";
 	for (j=0; j<str.length; j++) {
@@ -91,10 +105,14 @@ function numberSubstitute(str) {
 	return newStr;
 }
 
+//Determines whether a generated password is "easily typed"
+//In this case, that is how many consecutive letters are typed by alternating hands
+//Passwords are deemed "easy" if a majority of consecutive letters follow this
 function isEasy(str) {
 	left = ["q", "w", "e", "r", "t","a","s","d","f","g","z","x","c","v"];
 	right = ["y","u","i","o","p","h","j","k","l","b","n","m"];
 	
+	//Go through adjacent letters and count how many alternate sides of the keyboard
 	countAlternate = 0;
 	for (k=0; k<str.length-1; k++) {
 		if (left.includes(str.charAt(k)) && right.includes(str.charAt(k+1))) {
@@ -104,6 +122,8 @@ function isEasy(str) {
 			countAlternate++;
 		}
 	}
+	
+	//Based on the string length, return if it's easy based on the count we just got
 	if (str.length < 9) {
 		return countAlternate >= 5;
 	} else if (str.length < 12) {
