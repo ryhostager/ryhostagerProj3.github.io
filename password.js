@@ -17,7 +17,7 @@ function generatePasswords() {
 	document.body.style.backgroundColor = "lightblue";
 	//tt = document.createElement("table");
 	n = randomWord(2);
-	tt = document.body.innerHtml(n);
+	document.body.innerHtml = n;
 	t = document.querySelector("#pwTable");
 	trow = document.createElement("tr");
     td = document.createElement("td");
