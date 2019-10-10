@@ -18,7 +18,8 @@ function generatePasswords() {
     ul = document.createElement("ul");
 	for(i = 0; i < 20; i++) {
 		li = document.createElement("li");
-		contents = document.createTextNode("HI");
+		newPW = randomWord();
+		contents = document.createTextNode(newPW);
 		li.appendChild(contents);
 		ul.appendChild(li);
 		document.body.append(ul);
