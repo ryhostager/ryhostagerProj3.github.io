@@ -8,14 +8,14 @@
 
 
 
-randomWord = function(int num) {
+function randomWord(int num) {
 	if(num == 2) {
 		String item = twoLettersWords[Math.floor(Math.random()*twoLetterWords.length)];
 		return item;
 	}
 }
 
-generatePasswords = function() {
+function generatePasswords() {
 	document.body.style.backgroundColor = "lightblue";
 	//tt = document.createElement("table");
 	n = randomWord(2);
