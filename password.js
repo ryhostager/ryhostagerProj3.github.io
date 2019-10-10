@@ -13,7 +13,7 @@
 	//}
 //}
 twoLetterWords = ["of","to","in","is","it","he","on","as","be","at","or","by","we","up","an","do","if","so","go","no","my","me","us","oh","am"];
-function generatePasswords() {
+generatePasswords() {
 	document.body.style.backgroundColor = "lightblue";
 	//tt = document.createElement("table");
 	n = randomWord(2);
@@ -27,7 +27,7 @@ function generatePasswords() {
 	trow.appendChild(td);
 	t.appendChild(trow);
 }
-function randomWord(int n) {
+randomWord(int n) {
 	String item = twoLetterWords[Math.floor(Math.random()*twoLetterWords.length)];
 	return item;
 }
