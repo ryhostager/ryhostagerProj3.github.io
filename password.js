@@ -16,12 +16,12 @@ twoLetterWords = ["of", "to", "in", "is", "it", "he", "on", "as", "be", "at", "o
 function generatePasswords() {
     document.body.style.backgroundColor = "lightblue";
     ul = document.createElement("ul");
-	li = document.createElement("li");
-	contents = document.createTextNode("HI");
-	li.appendChild(contents);
-	ul.appendChild(li);
-	document.body.append(ul);
 	for(i = 0; i < 20; i++) {
+		li = document.createElement("li");
+		contents = document.createTextNode("HI");
+		li.appendChild(contents);
+		ul.appendChild(li);
+		document.body.append(ul);
 	}
     //n = randomWord(2);
     //document.body.innerHtml = n;
