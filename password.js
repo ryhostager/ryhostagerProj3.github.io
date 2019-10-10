@@ -10,8 +10,10 @@ function generatePasswords() {
 	max = document.querySelector("#maxWordLength").value;
 	pwLength = document.querySelector("#maxPWLength").value;
 	numSubs = document.querySelector("#subNums").checked;
-	document.body.removeChild("ul")
+	list = document.getElementById("passwords");
+	list.parentNode.removeChild(list);
     ul = document.createElement("ul");
+	ul.setAttribute("id", "passwords");
 	
 	for(i = 0; i < 20; i++) {
 		li = document.createElement("li");
