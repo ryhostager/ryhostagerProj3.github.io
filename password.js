@@ -21,6 +21,8 @@ function generatePasswords() {
 	li.appendChild(contents);
 	ul.appendChild(li);
 	document.body.append(ul);
+	for(i = 0; i < 20; i++) {
+	}
     //n = randomWord(2);
     //document.body.innerHtml = n;
     //t = document.querySelector("#pwTable");
