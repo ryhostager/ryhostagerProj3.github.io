@@ -12,10 +12,7 @@ select {
 	width: 150px;
 }
 
-#minWordLength {
-	display: inline;
-}
-
 ul {
 	list-style-type: none;
+	text-align: center;
 }
