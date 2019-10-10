@@ -44,9 +44,9 @@ function createPassword(min, max, maxLength) {
 	}
 	else {
 		if (max < maxLength) {
-			rand = Math.floor((Math.random() * (max-min)) + min);
+			rand = Math.floor((Math.random() * (max - min + 1)) + min);
 		} else {
-			rand = Math.floor((Math.random() * (maxLength-min)) + min);
+			rand = Math.floor((Math.random() * (maxLength - min + 1)) + min);
 		}
 		word = randomWord(rand);
 		return word + createPassword(min, max, maxLength - rand);
@@ -91,4 +91,14 @@ function numberSubstitute(str) {
 		}
 	}
 	return newStr;
+}
+
+function isEasy(str) {
+	left = ["q", "w", "e", "r", "t","a","s","d","f","g","z","x","c","v"];
+	right = ["y","u","i","o","p","h","j","k","l","b","n","m"];
+	
+	countAlternate = 0;
+	for (i=0; i<str.length; i++) {
+		
+	}
 }
