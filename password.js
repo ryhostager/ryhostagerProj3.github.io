@@ -8,12 +8,12 @@ sevenLetterWords = ["through","picture","country","between","thought","example",
 
 
 
-randomWord = function(int num) {
-	if(num == 2) {
-		String item = twoLettersWords[Math.floor(Math.random()*twoLetterWords.length)];
-		return item;
-	}
-}
+//randomWord = function(int num) {
+//	if(num == 2) {
+		//String item = twoLettersWords[Math.floor(Math.random()*twoLetterWords.length)];
+		//return item;
+	//}
+//}
 
 generatePasswords = function() {
 	document.body.style.backgroundColor = "lightblue";
