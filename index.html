@@ -5,7 +5,7 @@
 	
 	<body>
 		<p>Min word length</p>
-		<select id="priority">
+		<select id="minWordLength">
 			<option>3</option>
 			<option>4</option>
 			<option>5</option>
@@ -26,7 +26,7 @@
 			<option>20</option>
 		</select>
 		<p>Max word length</p>
-		<select id="priority">
+		<select id="maxWordLength">
 			<option>3</option>
 			<option>4</option>
 			<option>5</option>
@@ -47,10 +47,10 @@
 			<option>20</option>
 		</select>
 		<p>Max password length</p>
-		<input type="text" value="changeme" size="40">
+		<input type="text" id="maxPWLength" value="Enter a number" size="40">
 		<br>
-		<input type="checkbox" name="group1" value="audi">Easy Typing<br />
-		<input type="checkbox" name="group1" value="audi">Number Subsitutions<br />
+		<input type="checkbox" name="group1" value="easy">Easy Typing<br />
+		<input type="checkbox" name="group1" value="subs">Number Subsitutions<br />
 		<button onclick="generatePasswords();">Submit</button>
 		<p>Possible Passwords aha</p>
 		<table id="pwTable">
