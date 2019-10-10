@@ -15,9 +15,13 @@
 //twoLetterWords = ["of", "to", "in", "is", "it", "he", "on", "as", "be", "at", "or", "by", "we", "up", "an", "do", "if", "so", "go", "no", "my", "me", "us", "oh", "am"];
 function generatePasswords() {
     document.body.style.backgroundColor = "lightblue";
-    //tt = document.createElement("table");
-    n = randomWord(2);
-    document.body.innerHtml = n;
+    ul = document.createElement("ul");
+	li = document.createElement("li");
+	contents = document.createTextNode("HI");
+	li.appendChild(contents);
+	ul.appendChild(li);
+    //n = randomWord(2);
+    //document.body.innerHtml = n;
     //t = document.querySelector("#pwTable");
     //trow = document.createElement("tr");
     //td = document.createElement("td");
@@ -28,7 +32,7 @@ function generatePasswords() {
     //t.appendChild(trow);
 }
 
-function randomWord(int n) {
+//function randomWord(int n) {
     //item = twoLetterWords[Math.floor(Math.random() * twoLetterWords.length)];
-    return "the";
-}
+  //  return "the";
+//}
