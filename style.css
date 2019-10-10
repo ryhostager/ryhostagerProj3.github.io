@@ -3,9 +3,14 @@ body {
 	text-align: center;
 }
 
+h1 {
+	font-style: bold;
+}
+
 p {
 	font-style: bold;
 	font-size: 15pt;
+	margin-top: 10px;
 }
 
 select {
